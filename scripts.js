@@ -1,6 +1,11 @@
-function adicionarFilme(){
-  var campoFilmeFavorito = document.getElementById("filme").value;
-  var elementoFilmeFavorito = "<img src=" + campoFilmeFavorito + ">"
-  var elemntoListaFilmes = document.getElementById("listaFilmes")
-  elementoListaFilmes.innerHTML = elementoFilmeFavorito
+function adicionarFilme() {
+  var filmeFavorito = document.getElementById("filme").value;
+  if (filmeFavorito.endsWith(".jpg")) {
+  var elementoFilmeFavorito = "<img src=" + filmeFavorito + ">"
+  var elementoListaFilmes = document.getElementById("listaFilmes")
+  elementoListaFilmes.innerHTML = elementoListaFilmes.innerHTML + elementoFilmeFavorito;
+} else { 
+  console.error("Endereço de filme inválido");
+}
+document.getElementById("filme").value = "";
 }
